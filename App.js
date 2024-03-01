@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, SafeAreaView, StatusBar } from "react-native";
+// 匯入Header目錄
+import Albumlist from "./src/component/AlbumList/AlbumList.js";
+import Header from "./src/component/Header";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>111119009 數位二甲 王昱晴</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <SafeAreaView style={{flex: 1}}>
+      <StatusBar />
+      <Header />
+      <Albumlist />
+    </SafeAreaView>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  );
+};
+
+export default App;
