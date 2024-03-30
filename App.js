@@ -1,18 +1,23 @@
 import React from "react";
-import { Text, SafeAreaView, StatusBar } from "react-native";
-// 匯入Header目錄
-import Albumlist from "./src/component/AlbumList/AlbumList.js";
-import Header from "./src/component/Header";
+import { StatusBar, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import Navigation from "./navigation"
 
 const App = () => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <StatusBar />
-      <Header />
-      <Albumlist />
-    </SafeAreaView>
-
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar />
+        <Navigation />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;
